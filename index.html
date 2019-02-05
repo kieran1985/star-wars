@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Star Wars</title>
+    <link rel="stylesheet" type="text/css" href="style.css"></link>
+</head>
+
+<body>  
+    <audio controls="controls" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 12000)">
+        <source src="assets/StarWars.ogg" type="audio/ogg" />
+        <source src="assets/StarWars.mp3" type="audio/mpeg" />
+    </audio>
+    <p id="start">A long time ago in a galaxy far, far away&hellip;</p>
+    <div class="icon">
+        <img src="assets/StarWarsIcon.png"></img>
+    </div>    
+    <div id="scroll">
+        <div id="scrollcontent">
+            <p class="center">EPISODE IV<br />A NEW HOPE</p>
+            <p>It is a period of civil war.</p>
+            <p>Rebel spaceships, striking from a hidden base, have won their first victory against the evil Galactic Empire.</p>
+            <p>During the battle, Rebel spies managed to steal secret plans to the Empire's ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet.</p>
+            <p>Pursued by the Empire's sinister agents, Princess Leia races home aboard her starship, custodian of the stolen plans that can save her people and restore freedom to the galaxy.....</p>
+        </div>
+    </div>
+    <p id="end">Thanks for watching&hellip;</p>    
+</body>
+</html>

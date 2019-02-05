@@ -1,0 +1,160 @@
+/* Timings
+Start blue text = 0 - 10s
+Main logo = 12s - 24s
+Main crawl = 22s - 111s
+"Thanks" blue text = 80s - 90s
+*/
+
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans:400);
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  font-family: 'Droid Sans', arial, verdana, sans-serif;
+  font-weight: 700;
+  color: #ff6;
+  background-color: #000;
+  overflow: hidden;
+  position: relative;
+}
+
+/* A long time ago in a galaxy far, far away */
+p#start {
+  position: relative;
+  width: 16em;
+  font-size: 200%;
+  font-weight: 400;
+  margin: 20% auto;
+  color: #4ee;
+  opacity: 0;
+  z-index: 1;
+  animation: intro 10s ease-in-out;
+}
+
+/* STAR WARS */
+.icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: 0 auto;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.icon img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  opacity: 0;
+  animation: logo 12s ease-out 12s;
+}
+
+/* The crawl */
+
+#scroll {
+  position: absolute;
+  width: 18em;
+  height: 50em;
+  bottom: 0;
+  left: 50%;
+  margin-left: -9em;
+  font-size: 350%;
+  text-align: justify;
+  overflow: hidden;
+  transform-origin: 50% 100%;
+  transform: perspective(300px) rotateX(25deg);
+}
+
+#scroll:after {
+  position: absolute;
+  content: ' ';
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 60%;
+  background-image: linear-gradient(top, rgba(0, 0, 0, 1) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+#scroll p {
+  text-align: justify;
+  margin: 0.8em 0;
+}
+
+#scroll p.center {
+  text-align: center;
+}
+
+#scroll a {
+  color: #ff6;
+  text-decoration: underline;
+}
+
+#scrollcontent {
+  position: absolute;
+  top: 100%;
+  animation: scroll 100s linear 22s;
+}
+
+/* After the main crawl */
+
+p#end {
+  position: absolute;
+  left: 0;
+  top: 45%;
+  width: 100%;
+  font-size: 200%;
+  font-weight: 400;
+  text-align: center;
+  color: #4ee;
+  opacity: 0;
+  z-index: 1;
+  animation: intro 10s ease-in-out 80s;
+}
+
+/* animations */
+
+@keyframes intro {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes logo {
+  0% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+}
+
+@keyframes scroll {
+  0% {
+    top: 100%;
+  }
+  100% {
+    top: -170%;
+  }
+}
